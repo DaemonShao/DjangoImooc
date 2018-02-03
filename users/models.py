@@ -30,7 +30,7 @@ class UserProfile(AbstractUser):
 
 class EmailVerifyRecord(models.Model):
     """
-        定义发送邮件的model
+    定义发送邮件的model
     """
     code = models.CharField(max_length=20, verbose_name=u"验证码")
     email = models.EmailField(max_length=50, verbose_name=u"邮箱")
