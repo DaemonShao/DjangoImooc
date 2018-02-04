@@ -32,7 +32,8 @@ class CourseOrg(models.Model):
     image = models.ImageField(upload_to="org/%Y/%m", verbose_name=u"封面图")
     address = models.CharField(max_length=150, verbose_name=u"地址")
     city = models.ForeignKey(CityDict, verbose_name=u"c城市名称")
-
+    add_time = models.DateTimeField(default=datetime.now)
+    
     class Meta:
         verbose_name = u"课程机构"
         verbose_name_plural = verbose_name
