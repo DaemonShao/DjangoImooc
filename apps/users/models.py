@@ -24,6 +24,7 @@ class UserProfile(AbstractUser):
     class Meta:
         verbose_name = u"用户信息"
         verbose_name_plural = verbose_name
+
     def __unicode__(self, ):
         return self.username
 
@@ -40,6 +41,7 @@ class EmailVerifyRecord(models.Model):
     class Meta:
         verbose_name = u"邮箱验证码"
         verbose_name_plural = verbose_name
+
     def __unicode__(self, ):
         return self.code
 
@@ -58,5 +60,6 @@ class Banner(models.Model):
     class Meta:
         verbose_name = u"轮播图"
         verbose_name_plural = verbose_name
+
     def __unicode__(self, ):
         return self.title

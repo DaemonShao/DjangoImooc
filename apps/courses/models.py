@@ -27,6 +27,7 @@ class Course(models.Model):
     class Meta:
         verbose_name = u"课程"
         verbose_name_plural = verbose_name
+
     def __unicode__(self):
         return self.name
 
@@ -43,6 +44,7 @@ class Lesson(models.Model):
     class Meta:
         verbose_name = u"课程章节"
         verbose_name_plural = verbose_name
+
     def __unicode__(self, ):
         return self.course+"-"+self.name
 
@@ -58,6 +60,7 @@ class Video(models.Model):
     class Meta:
         verbose_name = u"视频"
         verbose_name_plural = verbose_name
+
     def __unicode__(self, ):
         return self.lesson+"-"+self.name
 
@@ -75,5 +78,6 @@ class CourseResource(models.Model):
     class Meta:
         verbose_name = u"课程资源"
         verbose_name_plural = verbose_name
+
     def __unicode__(self, ):
         return self.course+"-"+self.name
