@@ -28,7 +28,7 @@ class Course(models.Model):
         verbose_name = u"课程"
         verbose_name_plural = verbose_name
     def __unicode__(self):
-        pass
+        return self.name
 
 
 class Lesson(models.Model):
@@ -44,7 +44,7 @@ class Lesson(models.Model):
         verbose_name = u"课程"
         verbose_name_plural = verbose_name
     def __unicode__(self, ):
-        pass
+        return self.course+"-"+self.name
 
 
 class Video(models.Model):
@@ -59,7 +59,7 @@ class Video(models.Model):
         verbose_name = u"视频"
         verbose_name_plural = verbose_name
     def __unicode__(self, ):
-        pass
+        return self.lesson+"-"+self.name
 
 
 class CourseResource(models.Model):
@@ -76,4 +76,4 @@ class CourseResource(models.Model):
         verbose_name = u"课程资源"
         verbose_name_plural = verbose_name
     def __unicode__(self, ):
-        pass
+        return self.course+"-"+self.name

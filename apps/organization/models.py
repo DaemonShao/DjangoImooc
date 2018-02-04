@@ -18,7 +18,7 @@ class CityDict(models.Model):
         verbose_name = u"城市"
         verbose_name_plural = verbose_name
     def __unicode__(self, ):
-        pass
+        return self.name
 
 
 class CourseOrg(models.Model):
@@ -38,15 +38,15 @@ class CourseOrg(models.Model):
         verbose_name = u"课程机构"
         verbose_name_plural = verbose_name
     def __unicode__(self, ):
-        pass
+        return self.name
 
 
 class Teacher(models.Model):
     """Teacher
-    教程model
+    教师model
     """
     org = models.ForeignKey(CourseOrg, verbose_name=u"所属机构")
-    name = models.CharField(max_length=50, verbose_name=u"机构名称")
+    name = models.CharField(max_length=50, verbose_name=u"教师名称")
     work_years = models.IntegerField(default=0, verbose_name=u"工作年限")
     work_company = models.CharField(max_length=50, verbose_name=u"就职公司")
     work_position = models.CharField(max_length=50, verbose_name=u"公司职位")
@@ -59,4 +59,4 @@ class Teacher(models.Model):
         verbose_name = u"教师"
         verbose_name_plural = verbose_name
     def __unicode__(self, ):
-        pass
+        return self.name
